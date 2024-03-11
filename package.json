@@ -1,0 +1,17 @@
+{
+  "name": "@kne/load-npm-info",
+  "version": "0.1.0",
+  "description": "获取包在npm上的信息",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "linzp",
+  "license": "ISC",
+  "dependencies": {
+    "@kne/ensure-slash": "^0.1.0",
+    "cross-spawn-promise": "^0.10.2",
+    "lodash": "^4.17.21",
+    "request-promise": "^4.2.6"
+  }
+}

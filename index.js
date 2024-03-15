@@ -6,7 +6,9 @@ const lodash = require('lodash');
 const loadNpmInfo = async (packageName) => {
     const registryDomain = await spawn('npm', ['config', 'get', 'registry']);
     console.log(`从npm获取package[${packageName}]信息...`);
-    const downloadInfo = await request(ensureSlash(registryDomain.toString().trim(), true) + packageName);
+    const downloadInfo = await request(ensureSlash(registryDomain.toString().trim(), true) + packageName,{
+        timeout: 60 * 1000
+    });
     const packageData = JSON.parse(downloadInfo);
     return {
         name: lodash.last(packageName.split('/')),

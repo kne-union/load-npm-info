@@ -1,0 +1,15 @@
+name: Static Data
+
+on:
+  pull_request:
+    branches: [master]
+    types:
+      - closed
+jobs:
+  publish-static-data:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: kne-union/actions-manifest@master
+        with:
+          token: ${{ secrets.ADMIN_TOKEN }}

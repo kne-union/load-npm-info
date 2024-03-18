@@ -18,7 +18,8 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-
+      - name: Create MD doc
+        run: npx @kne/md-doc
       - name: Publish Npm
         env:
           NODE_AUTH_TOKEN: ${{secrets.KNE_PACKAGE_PUBLISH}}

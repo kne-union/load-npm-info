@@ -1,6 +1,6 @@
 {
   "name": "@kne/load-npm-info",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "获取包在npm上的信息",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,6 @@
     "@kne/ensure-slash": "^0.1.0",
     "cross-spawn-promise": "^0.10.2",
     "lodash": "^4.17.21",
-    "request-promise": "^4.2.6"
+    "node-fetch": "^2.7.0"
   }
 }

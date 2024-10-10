@@ -1,5 +1,5 @@
 const spawn = require('cross-spawn-promise');
-const request = require('request-promise');
+const fetch = require('node-fetch');
 const ensureSlash = require('@kne/ensure-slash');
 const lodash = require('lodash');
 
@@ -12,10 +12,10 @@ const loadNpmInfo = async (packageName) => {
         packageName = packageName.replace(versionMatch[0], '');
         currentVersion = versionMatch[1];
     }
-    const downloadInfo = await request(ensureSlash((registryDomain || 'https://registry.npmjs.com').toString().trim(), true) + packageName, {
+    const response = await fetch(ensureSlash((registryDomain || 'https://registry.npmjs.com').toString().trim(), true) + packageName, {
         timeout: 60 * 1000
     });
-    const packageData = JSON.parse(downloadInfo);
+    const packageData = await response.json();
     return {
         name: lodash.last(packageName.split('/')),
         packageName: packageData.name,

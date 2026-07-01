@@ -1,6 +1,6 @@
 {
   "name": "@kne/load-npm-info",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "获取包在npm上的信息",
   "main": "index.js",
   "scripts": {

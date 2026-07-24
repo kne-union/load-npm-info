@@ -21,19 +21,15 @@ npm i --save @kne/load-npm-info
 ```js
 const loadNpmInfo = require('@kne/load-npm-info');
 
-const promsie = loadNpmInfo(packageName);
+const promise = loadNpmInfo(packageName);
+// 可选第二参指定 registry（不传则用 npm config / 默认源）
+const promise2 = loadNpmInfo(packageName, { registry: 'https://registry.npmmirror.com' });
 ```
-
-
-### 示例
-
-#### 示例代码
-
-
 
 ### API
 
-| 属性名         | 说明        | 类型     | 默认值 |
-|-------------|-----------|--------|-----|
-| packageName | 需要获取信息的包名 | string | -   |
+| 属性名 / 参数 | 说明 | 类型 | 默认值 |
+|-------------|------|------|--------|
+| packageName | 需要获取信息的包名（可含 `@version`） | string | - |
+| options.registry | 可选 npm registry | string | 不传则沿用 npm 默认 |
 

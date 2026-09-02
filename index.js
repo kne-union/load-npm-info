@@ -93,6 +93,7 @@ const normalizePackageData = (packageData, packageName, currentVersion) => ({
   ),
   homepage: packageData.homepage,
   repository: packageData.repository,
+  description: packageData.description || null,
   readme: packageData.readme
 });
 
